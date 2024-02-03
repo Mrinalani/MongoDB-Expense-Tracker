@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com https://checkout.razorpay.com 'unsafe-inline';">
+    <title>Expense</title>
+
+    <style>
+
+        .current-page {
+          background-color: #007bff; 
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 5px;
+        }
+      </style>
+    
+
+</head>
+<body>
+
+<form action="" onsubmit="SaveExpense(event)">
+    <label for="">Choose Expenses Amount</label>
+    <input type="number" name="expense" id="expense">
+
+    <label for="">Choose Description</label>
+    <input type="text" name="description" id="description">
+
+    <label for="">Choose Category</label>
+    <select name="category" id="category">
+        <option value="Food">Food</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Salary">shopping</option>
+        <option value="miscellaneous">miscellaneous</option>
+    </select>
+
+    <input type="submit" value="Add expense">
+
+</form>
+<br> <br> 
+<div id="divtag"></div>
+<button id="leaderboardbutton"></button>
+<button id="rzp-button">Buy Premium</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<br><br>
+<button onclick="down()" id="downloadexpense">Download your Expense File</button> <br><br>
+<div id="div"></div>
+<button onclick="GetAllDownloads()" id="listOfDownloads">Get Your Downloaded Files</button>
+
+
+
+<!-- <button id="download"></button> -->
+<br> <br><br><br>
+
+<ul>EXPENSES
+<ul id="itemlist"></ul>
+</ul>
+
+<div id="pagination">
+    <button id="firstPageButton" disabled>&lt;&lt; First</button>
+    <button id="prevPageButton" disabled>&lt; Previous</button>
+    <div id="paginationNumbers" style="display: inline-block;"></div>
+    <button id="nextPageButton">Next &gt;</button>
+    <button id="lastPageButton">Last &gt;&gt;</button>
+<label for="expensesPerPage">Expenses per Page:</label>
+<select id="expensesPerPage">
+    <option value="1">1</option>
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="7">7</option>
+    <option value="50">10</option>
+</select>
+</div>
+
+<br> <br> 
+<div id="downloads-container"></div>
+
+<br> <br><br><br>
+<ul id="leaderboard"></ul>
+<ul ID="ulist1"></ul>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+<script src="./expense.js"></script>
+</body>
+</html>
